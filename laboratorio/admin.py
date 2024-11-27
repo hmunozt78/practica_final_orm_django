@@ -17,6 +17,6 @@ class DirectorGeneralAdmin(admin.ModelAdmin):
     
 @admin.register(Producto)
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ('id','nombre', 'laboratorio')
+    list_display = ('id','nombre', 'laboratorio','f_fabricacion', 'p_costo', 'p_venta')
     search_fields = ('id','nombre')
     list_filter = ('id','nombre')
