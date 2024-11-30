@@ -1,8 +1,8 @@
 {% extends "layouts/base.html" %}
-{% load static %}
+
 {% block contenido %}
 <header>
-    <h1>Listado de Laboratorios</h1>
+    <h1>Listado de Directores</h1>
 </header>
 <main class="container py-3">
     {% comment %} <div class="row justify-content-evenly g-3">
@@ -26,8 +26,8 @@
                         <td>{{laboratorio.nombre}}</td>
                         <td>{{laboratorio.ciudad}}</td>
                         <td>{{laboratorio.pais}}</td>
-                        <td><a href="{% url "act_lab" laboratorio.id %}"><img src="{% static "img/icons/edit.svg" %}" alt=""></a></td>
-                        <td><a href="{% url "del_lab" laboratorio.id %}">{% comment %} <img src="{% static "img/icons/papelera.png" %}" style="Width=5px" alt=""> {% endcomment %}</a></td>
+                        <td><a href="{% url "act_lab" laboratorio.id %}">Actualiza</a></td>
+                        <td><a href="{% url "del_lab" laboratorio.id %}">Eliminar</a></td>
                       </tr>
                     {% endfor %}
                 </tbody>
