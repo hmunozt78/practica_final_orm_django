@@ -2,12 +2,13 @@ from django.db import models
 
 # Create your models here.
 
+
 class Laboratorio(models.Model):
 
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100, null=False, blank=False,unique=True)
-    ciudad = models.CharField(max_length=100, null=False, blank=False, default='Santiago')
-    pais = models.CharField(max_length=100, null=False, blank=False, default='Chile')
+    ciudad = models.CharField(max_length=100, null=False, blank=False)
+    pais = models.CharField(max_length=100, null=False, blank=False)
 
     def __str__(self):
         return self.nombre
@@ -15,6 +16,7 @@ class Laboratorio(models.Model):
     class Meta:
         managed = True
         db_table = 'laboratorios'
+        
         
 class DirectorGeneral(models.Model):
 

@@ -1,15 +1,24 @@
 from django import forms
-
-from .models import Laboratorio
+from .models import Laboratorio, DirectorGeneral
 
 class LaboratorioForm(forms.ModelForm):
-    
     class Meta:
         model = Laboratorio
-        fields = ("nombre","ciudad","pais",)
+        fields = ['nombre', 'ciudad', 'pais']
+        widgets = {
+            #'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese el nombre del laboratorio'}),
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'ciudad': forms.TextInput(attrs={'class': 'form-control'}),
+            'pais': forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
-# id = models.AutoField(primary_key=True)
-# nombre = models.CharField(max_length=100, null=False, blank=False,unique=True)
-# ciudad = models.CharField(max_length=100, null=False, blank=False, default='Santiago')
-# pais = models.CharField(max_length=100, null=False, blank=False, default='Chile')
-
+class DirectorGeneralForm(forms.ModelForm):
+    
+    class Meta:
+        model = DirectorGeneral
+        fields = ["nombre", "laboratorio", "especialidad"]
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'laboratorio': forms.TextInput(attrs={'class': 'form-control'}),
+            'especialidad': forms.TextInput(attrs={'class': 'form-control'}),
+        }
