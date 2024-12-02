@@ -25,7 +25,11 @@ $python -m venv venv
 
 '''$./venv/Scripts/activate'''
 
-
+```
+git status
+git add
+git commit
+```
 ## Temas Generales:
 
 Para esta practica se han usado principalmente vistas basadas en clases
