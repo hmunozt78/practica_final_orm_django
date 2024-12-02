@@ -27,7 +27,7 @@
                         <td>{{laboratorio.ciudad}}</td>
                         <td>{{laboratorio.pais}}</td>
                         <td><a href="{% url "act_lab" laboratorio.id %}"><img src="{% static "img/icons/edit.svg" %}" alt=""></a></td>
-                        <td><a href="{% url "del_lab" laboratorio.id %}">{% comment %} <img src="{% static "img/icons/papelera.png" %}" style="Width=5px" alt=""> {% endcomment %}</a></td>
+                        <td><a href="{% url "del_lab" laboratorio.id %}">Eliminar</a></td>
                       </tr>
                     {% endfor %}
                 </tbody>

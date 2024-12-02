@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Laboratorio
+from .models import Laboratorio, DirectorGeneral
 from django.views.generic import ListView,  CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .forms import LaboratorioForm
+from .forms import LaboratorioForm, DirectorGeneralForm
 # from django.contrib.auth.mixins import AccessMixin, LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 # from django.shortcuts import redirect
 #from .forms import LaboratorioForm
@@ -52,3 +52,34 @@ class LaboratorioDeleteView(DeleteView):
     template_name = "laboratorio/del_lab.html"
     success_url = reverse_lazy('laboratorios')
 
+
+class DirectorGeneralListView(ListView):
+    model = DirectorGeneral
+    template_name = "directores/directores.html"
+    form_class = DirectorGeneralForm
+    context_object_name="directores"
+
+class DirectorGeneralCreateView(CreateView):
+    model = DirectorGeneral
+    form_class = DirectorGeneralForm
+    template_name = "directores/crea_dir.html"
+    success_url = reverse_lazy('directores')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context 
+    
+class DirectorGeneralUpdateView(UpdateView):
+    model = DirectorGeneral
+    form_class = DirectorGeneralForm
+    template_name = "directores/act_dir.html"
+    success_url = reverse_lazy('directores')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+    
+class DirectorGeneralDeleteView(DeleteView):
+    model = DirectorGeneral
+    template_name = "directores/del_dir.html"
+    success_url = reverse_lazy('directores')

@@ -13,21 +13,21 @@
                   <tr>
                     {% comment %} <th scope="col">ID</th> {% endcomment %}
                     <th scope="col">Nombre</th>
-                    <th scope="col">Ciudad</th>
-                    <th scope="col">Pais</th>
+                    <th scope="col">Laboratorio</th>
+                    <th scope="col">Especialidad</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
-                    {% for laboratorio in laboratorios %}
+                    {% for director in directores %}
                     <tr>
                         {% comment %} <th scope="row">{{laboratorio.id}}</th> {% endcomment %}
-                        <td>{{laboratorio.nombre}}</td>
-                        <td>{{laboratorio.ciudad}}</td>
-                        <td>{{laboratorio.pais}}</td>
-                        <td><a href="{% url "act_lab" laboratorio.id %}">Actualiza</a></td>
-                        <td><a href="{% url "del_lab" laboratorio.id %}">Eliminar</a></td>
+                        <td>{{director.nombre}}</td>
+                        <td>{{director.laboratorio}}</td>
+                        <td>{{director.especialidad}}</td>
+                        <td><a href="{% url "act_dir" director.id %}">Actualiza</a></td>
+                        <td><a href="{% url "del_dir" director.id %}">Eliminar</a></td>
                       </tr>
                     {% endfor %}
                 </tbody>
