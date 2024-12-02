@@ -25,7 +25,9 @@ python -m venv venv
 
 > Ejecute el entorno virtual
 
-```./venv/Scripts/activate```
+```
+./venv/Scripts/activate
+```
 
 > Instale los modulos necesarios con las siguientes instrucciones
 
@@ -36,7 +38,9 @@ pip install psycopg2==2.9.10
 
 > Para clonar el proyecto ejecute la siguiente instruccion:
 
-```git clone https://github.com/hmunozt78/practica_final_orm_django.git```
+```
+git clone https://github.com/hmunozt78/practica_final_orm_django.git
+```
 
 ## Creacion de la Base de datos y configuracion del proyecto:
 
