@@ -22,9 +22,9 @@ $python -m venv venv
 '''
 
 > Ejecute el entorno virtual
-"""
-$./venv/Scripts/activate
-"""
+
+'''$./venv/Scripts/activate'''
+
 
 ## Temas Generales:
 
