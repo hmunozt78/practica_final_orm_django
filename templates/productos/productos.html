@@ -5,13 +5,11 @@
     <h1>Listado de Productos</h1>
 </header>
 <main class="container py-3">
-    {% comment %} <div class="row justify-content-evenly g-3">
-        {% for curso in cursos %}
-        <div class="col-12 col-sm-4 col-lg-3"> {% endcomment %}
+    <div class="row justify-content-evenly g-3">
+        <div class="col-12 col-sm-4 col-lg-3">
             <table class="table">
                 <thead>
                   <tr>
-                    {% comment %} <th scope="col">ID</th> {% endcomment %}
                     <th scope="col">Nombre</th>
                     <th scope="col">Laboratorio</th>
                     <th scope="col">Fecha Fabricacion</th>
@@ -24,7 +22,6 @@
                 <tbody>
                     {% for producto in productos %}
                     <tr>
-                        {% comment %} <th scope="row">{{laboratorio.id}}</th> {% endcomment %}
                         <td>{{producto.nombre}}</td>
                         <td>{{producto.laboratorio}}</td>
                         <td>{{producto.f_fabricacion}}</td>
@@ -36,8 +33,7 @@
                     {% endfor %}
                 </tbody>
               </table>
-        {% comment %} </div>
-        {% endfor %} {% endcomment %}
+        </div>
     </div>
 </main>
 
