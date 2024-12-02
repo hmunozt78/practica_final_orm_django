@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Laboratorio, DirectorGeneral
+from .models import Laboratorio, DirectorGeneral, Producto
 from django.views.generic import ListView,  CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .forms import LaboratorioForm, DirectorGeneralForm
+from .forms import LaboratorioForm, DirectorGeneralForm, ProductoForm
 # from django.contrib.auth.mixins import AccessMixin, LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 # from django.shortcuts import redirect
 #from .forms import LaboratorioForm
@@ -29,7 +29,6 @@ class LaboratorioCreateView(CreateView):
     model = Laboratorio
     form_class = LaboratorioForm
     template_name = "laboratorio/crea_lab.html"
-    #fields = ['nombre', 'ciudad', 'pais']
     success_url = reverse_lazy('laboratorios')
     
     def get_context_data(self, **kwargs):
@@ -40,7 +39,6 @@ class LaboratorioUpdateView(UpdateView):
     model = Laboratorio
     form_class = LaboratorioForm
     template_name = "laboratorio/act_lab.html"
-    #fields = ['nombre', 'ciudad', 'pais']
     success_url = reverse_lazy('laboratorios')
     
     def get_context_data(self, **kwargs):
@@ -83,3 +81,38 @@ class DirectorGeneralDeleteView(DeleteView):
     model = DirectorGeneral
     template_name = "directores/del_dir.html"
     success_url = reverse_lazy('directores')
+    
+###############################################################
+#           Aqui comienzan las vistas de productos            #
+###############################################################
+    
+class ProductoListView(ListView):
+    model = Producto
+    template_name = "productos/productos.html"
+    form_class = ProductoForm
+    context_object_name="productos"
+
+class ProductoCreateView(CreateView):
+    model = Producto
+    form_class = ProductoForm
+    template_name = "productos/crea_prod.html"
+    success_url = reverse_lazy('productos')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context 
+    
+class ProductoUpdateView(UpdateView):
+    model = Producto
+    form_class = ProductoForm
+    template_name = "productos/act_prod.html"
+    success_url = reverse_lazy('productos')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+    
+class ProductoDeleteView(DeleteView):
+    model = Producto
+    template_name = "productos/del_prod.html"
+    success_url = reverse_lazy('productos')

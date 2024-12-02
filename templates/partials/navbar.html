@@ -6,7 +6,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url "index" %}">Home</a>
           <div class="dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Laboratorios
@@ -33,19 +33,8 @@
             </a>
           
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Listado de Productos</a></li>
-              <li><a class="dropdown-item" href="#">Agregar Productos</a></li>
-            </ul>
-          </div>
-          <div class="dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
-            </a>
-          
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="{% url "productos" %}">Listado de Productos</a></li>
+              <li><a class="dropdown-item" href="{% url "crea_prod" %}">Agregar Productos</a></li>
             </ul>
           </div>
         </div>
