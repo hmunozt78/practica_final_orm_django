@@ -2,16 +2,15 @@
 
 {% block contenido %}
 <header>
-    <h1>Creacion de Laboratorios</h1>
+    
 </header>
 <main class="container">
     <section>
         {% if laboratorio.id %}
-        Actualiza Laboratorio
+        <h1 class="text-center py-5">Actualiza Director General.</h1>
         {% else %}
-        crea Laboratorio
+        <h1 class="text-center py-5">Crea Director General</h1>
         {% endif %}
-        <h1 class="text-center py-5">Crea un nuevo club.</h1>
     </section>
 
     <section>
@@ -22,7 +21,11 @@
                     {% csrf_token %}
                     {{form}}
                     <div>
-                        <input type="submit" class="btn btn-primary" value="Actualiza Laboratorio"> 
+                        {% if laboratorio.id %}
+                            <input type="submit" class="btn btn-primary" value="Actualiza Director">
+                        {% else %}
+                            <input type="submit" class="btn btn-primary" value="Crea Director">
+                        {% endif %}
                     </div>
                 </form>
             </div>

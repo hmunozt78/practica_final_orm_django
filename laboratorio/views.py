@@ -3,12 +3,6 @@ from .models import Laboratorio, DirectorGeneral, Producto
 from django.views.generic import ListView,  CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .forms import LaboratorioForm, DirectorGeneralForm, ProductoForm
-# from django.contrib.auth.mixins import AccessMixin, LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
-# from django.shortcuts import redirect
-#from .forms import LaboratorioForm
-# from django.contrib.auth.decorators import login_required, permission_required 
-# from django.forms import ValidationError
-# from django.contrib import messages
 
 #Estas Importaciones son para la vista basada en funciones
 from django.shortcuts import redirect
@@ -23,12 +17,14 @@ class LaboratorioListView(ListView):
     context_object_name="laboratorios"
 
 
-#Vista basada en Clases para Creacion de Laboratorios
+###############################################################
+#           Aqui comienzan las vistas de Laboratorios         #
+###############################################################
 
 class LaboratorioCreateView(CreateView):
     model = Laboratorio
     form_class = LaboratorioForm
-    template_name = "laboratorio/crea_lab.html"
+    template_name = "laboratorio/act_crea_lab.html"
     success_url = reverse_lazy('laboratorios')
     
     def get_context_data(self, **kwargs):
@@ -38,7 +34,7 @@ class LaboratorioCreateView(CreateView):
 class LaboratorioUpdateView(UpdateView):
     model = Laboratorio
     form_class = LaboratorioForm
-    template_name = "laboratorio/act_lab.html"
+    template_name = "laboratorio/act_crea_lab.html"
     success_url = reverse_lazy('laboratorios')
     
     def get_context_data(self, **kwargs):
@@ -50,6 +46,9 @@ class LaboratorioDeleteView(DeleteView):
     template_name = "laboratorio/del_lab.html"
     success_url = reverse_lazy('laboratorios')
 
+###############################################################
+#           Aqui comienzan las vistas de Directores           #
+###############################################################
 
 class DirectorGeneralListView(ListView):
     model = DirectorGeneral
@@ -60,7 +59,7 @@ class DirectorGeneralListView(ListView):
 class DirectorGeneralCreateView(CreateView):
     model = DirectorGeneral
     form_class = DirectorGeneralForm
-    template_name = "directores/crea_dir.html"
+    template_name = "directores/act_crea_direct.html"
     success_url = reverse_lazy('directores')
     
     def get_context_data(self, **kwargs):
